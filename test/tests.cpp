@@ -111,7 +111,9 @@ TEST(DoorInterfaceTest, ControllerReturnsDoorStateFromInterface) {
   DoorController controller;
   MockDoor mockDoor;
 
-  EXPECT_CALL(mockDoor, isDoorOpened()).Times(1).WillOnce(::testing::Return(true));
+  EXPECT_CALL(mockDoor, isDoorOpened())
+      .Times(1)
+      .WillOnce(::testing::Return(true));
 
   EXPECT_TRUE(controller.IsOpened(&mockDoor));
 }
